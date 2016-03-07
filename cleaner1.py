@@ -26,8 +26,7 @@ for row in reader:
     row['first_name'] = row['first_name'].upper()
     row['zip'] = row['zip'].zfill(5)
     row['city'] = row['city'].replace('&nbsp;', ' ')
-    if row['amount']>1000.00: print row
-    
-    print row
-    writer.writerow(row)
+    if float(row['amount']) > 1000.0: 
+    	
+    	writer.writerow(row)
     
