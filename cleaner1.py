@@ -4,8 +4,8 @@
 import csv
 
 # Open our input and output files
-csvfile = open('./advanced-data-journalism/assignments/data-cleaning/cleanme.csv', 'r')
-outfile = open('./advanced-data-journalism/assignments/data-cleaning/cleanme-clean.csv', 'w')
+csvfile = open('cleanme.csv', 'r')
+outfile = open('cleanme-clean.csv', 'w')
 
 # Now a DictReader and DictWriter
 # DictReader and DictWriter are imported libraries
@@ -25,7 +25,7 @@ for row in reader:
 	# We are overwriting something that already exists
     row['first_name'] = row['first_name'].upper()
     row['zip'] = row['zip'].zfill(5)
-    row['city'] = row['city'].replace('&nbsp;')
+    row['city'] = row['city'].replace('&nbsp;', ' ')
     if row['amount']>1000.00: print row
     
     print row
