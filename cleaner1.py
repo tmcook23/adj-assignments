@@ -4,8 +4,8 @@
 import csv
 
 # Open our input and output files
-csvfile = open('./data/cleanme.csv', 'r')
-outfile = open('./data/cleanme-clean.csv', 'w')
+csvfile = open('./advanced-data-journalism/assignments/data-cleaning/cleanme.csv', 'r')
+outfile = open('./advanced-data-journalism/assignments/data-cleaning/cleanme-clean.csv', 'w')
 
 # Now a DictReader and DictWriter
 # DictReader and DictWriter are imported libraries
@@ -28,5 +28,6 @@ for row in reader:
     row['city'] = row['city'].replace('&nbsp;')
     if row['amount']>1000.00: print row
     
+    print row
     writer.writerow(row)
     
