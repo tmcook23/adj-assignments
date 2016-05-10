@@ -1,6 +1,6 @@
 # Tracy Cook; Final Project (Missourian Weather Scraper)
 
-import urllib2, csv, mechanize
+import csv, mechanize
 from bs4 import BeautifulSoup
 
 output = open('FinalWeather_v2.csv', 'w')
@@ -25,24 +25,20 @@ weather = soup.find('div',
 	#'class': 'weather-right-now-details'
 })
 
-print weather
+#print weather
 
 for x in weather:
 	if x.string:
 		print 'Temperature right now: ' + x.string.strip()
 
-#weather_values = weather.find('option')
+condition = soup.find('div',
+	{'class': 'weather-right-now-condition'
+})
 
-#for temp in 'weather-right-now-temp':
-#	temp_value = temp.text
-#	print temp['value']
+#print condition
 
-#	main_table = soup.find('table',
-#		{'class': 'weather-now-container'
-#	})
+for x in condition:
+	if x.string:
+		print 'Condition right now: ' + x.string.strip()
 
-#	print main_table
-#	print output
-#	writer.writerow(data)
-        
 # end of file
