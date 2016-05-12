@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 br = mechanize.Browser()
 br.set_handle_robots(False)
 br.open('http://www.columbiamissourian.com/weather/?weather_zip=65201')
+#Change ZIP code in URL to switch locations
 
 html = br.response().read()
 soup = BeautifulSoup(html, "html.parser")
