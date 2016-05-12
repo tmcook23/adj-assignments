@@ -1,10 +1,7 @@
 # Tracy Cook; Final Project (Missourian Weather Scraper)
 
-import csv, mechanize
+import mechanize
 from bs4 import BeautifulSoup
-
-output = open('FinalWeather_v2.csv', 'w')
-writer = csv.writer(output)
 
 br = mechanize.Browser()
 br.set_handle_robots(False)
